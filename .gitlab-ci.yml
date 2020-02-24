@@ -1,0 +1,11 @@
+stages:
+- deploy
+deploy:
+stage: deploy
+script:
+    - mkdir -p /var/www/gitlab/myApp
+    - git --work-tree=/var/www/gitlab/myApp checkout -f
+only:
+    - master
+tags:
+    - shell
